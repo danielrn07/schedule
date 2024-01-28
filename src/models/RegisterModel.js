@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const validator = require('validator')
+const bcryptjs = require('bcryptjs')
 const LoginModel = require('./LoginModel')
 
 const RegisterSchema = new mongoose.Schema({
@@ -19,10 +20,14 @@ class Register {
   async register() {
     this.validateData()
     if (this.errors.length > 0) return
-    
+
     try {
+      const salt = bcryptjs.genSaltSync()
+      this.body.password = bcryptjs.hashSync(this.body.password, salt)
       this.user = await LoginModel.create(this.body)
-    } catch(e) { console.log(e) }
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   validateData() {
