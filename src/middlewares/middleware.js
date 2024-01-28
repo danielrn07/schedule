@@ -1,11 +1,13 @@
 exports.checkCsrfError = (error, req, res, next) => {
   if (error) {
-    return res.render("404");
+    return res.render('404')
   }
-  next();
-};
+  next()
+}
 
 exports.csrfMiddleware = (req, res, next) => {
-  res.locals.csrfToken = req.csrfToken();
-  next();
-};
+  res.locals.csrfToken = req.csrfToken()
+  res.locals.errors = req.flash('errors')
+  res.locals.success = req.flash('success')
+  next()
+}

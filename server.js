@@ -7,7 +7,7 @@ mongoose
   .then(() => {
     app.emit("Ok");
   })
-  .catch((e) => console.log(e));
+  .catch((e) => console.error(e));
 
 const session = require("express-session");
 const MongoStore = require("connect-mongo");

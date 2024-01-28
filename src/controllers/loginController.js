@@ -1,8 +1,6 @@
-exports.index = (req, res) => {
-    res.render("login");
-}
+const Login = require('../models/LoginModel')
 
-exports.register = (req, res) => {
-    res.send("Oi");
+exports.index = (req, res) => {
+  res.render('login')
 }
 
