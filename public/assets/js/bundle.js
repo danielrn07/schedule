@@ -26,6 +26,20 @@ ___CSS_LOADER_EXPORT___.push([module.id, `@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --breakpoints-sm: 576px;
+  --breakpoints-md: 768px;
+  --breakpoints-lg: 992px;
+  --breakpoints-xl: 1200px;
+
+  --screen-sm: 540px;
+  --screen-md: 720px;
+  --screen-lg: 960px;
+  --screen-xl: 1140px;
+}
+
+/* COMPONENTS */
+
 * {
   box-sizing: border-box;
   outline: 0;
@@ -40,14 +54,7 @@ body {
   line-height: 1.5em;
 }
 
-.container {
-  max-width: 100%;
-  margin: 50px 50px;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-}
-`, "",{"version":3,"sources":["webpack://./frontend/assets/css/styles.css"],"names":[],"mappings":"AAAA,cAAc;AACd,oBAAoB;AACpB,mBAAmB;;AAInB;EACE,sBAAsB;EACtB,UAAU;AACZ;;AAEA;EACE,SAAS;EACT,UAAU;EACV,gCAAgC;EAChC,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;AACpB;;AAEA;EACE,eAAe;EACf,iBAAiB;EACjB,gBAAgB;EAChB,aAAa;EACb,mBAAmB;AACrB","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');\n\n* {\n  box-sizing: border-box;\n  outline: 0;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: var(--primary-color);\n  font-family: 'Open sans', sans-serif;\n  font-size: 1.3em;\n  line-height: 1.5em;\n}\n\n.container {\n  max-width: 100%;\n  margin: 50px 50px;\n  background: #fff;\n  padding: 20px;\n  border-radius: 10px;\n}\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./frontend/assets/css/styles.css"],"names":[],"mappings":"AAAA,cAAc;AACd,oBAAoB;AACpB,mBAAmB;;AAEnB;EACE,uBAAuB;EACvB,uBAAuB;EACvB,uBAAuB;EACvB,wBAAwB;;EAExB,kBAAkB;EAClB,kBAAkB;EAClB,kBAAkB;EAClB,mBAAmB;AACrB;;AAEA,eAAe;;AAKf;EACE,sBAAsB;EACtB,UAAU;AACZ;;AAEA;EACE,SAAS;EACT,UAAU;EACV,gCAAgC;EAChC,oCAAoC;EACpC,gBAAgB;EAChB,kBAAkB;AACpB","sourcesContent":["@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --breakpoints-sm: 576px;\n  --breakpoints-md: 768px;\n  --breakpoints-lg: 992px;\n  --breakpoints-xl: 1200px;\n\n  --screen-sm: 540px;\n  --screen-md: 720px;\n  --screen-lg: 960px;\n  --screen-xl: 1140px;\n}\n\n/* COMPONENTS */\n\n\n@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');\n\n* {\n  box-sizing: border-box;\n  outline: 0;\n}\n\nbody {\n  margin: 0;\n  padding: 0;\n  background: var(--primary-color);\n  font-family: 'Open sans', sans-serif;\n  font-size: 1.3em;\n  line-height: 1.5em;\n}\n\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

@@ -4,9 +4,10 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "webpack -w",
+    "webpack": "webpack -w",
     "start": "nodemon server.js --ignore public --ignore frontend",
-    "tailwind": "tailwindcss -i ./frontend/assets/css/styles.css -o ./frontend/assets/css/bundle.css --watch"
+    "tailwind": "tailwindcss -i ./frontend/assets/css/styles.css -o ./frontend/assets/css/bundle.css --watch",
+    "dev": "./run-scripts.sh"
   },
   "keywords": [],
   "author": "",
