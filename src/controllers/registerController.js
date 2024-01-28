@@ -16,7 +16,7 @@ exports.register = async (req, res) => {
       })
       return
     }
-    req.flash('success', 'Seu usuário foi criado.')
+    req.flash('success', 'Conta criada com sucesso.')
       req.session.save(() => {
         return res.redirect('back')
       })
