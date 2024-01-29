@@ -12,3 +12,13 @@ exports.csrfMiddleware = (req, res, next) => {
   res.locals.user = req.session.user
   next()
 }
+
+exports.loginRequired = (req, res, next) => {
+  if (!req.session.user) {
+    req.flash('errors', 'É necessário entrar na sua conta para cadastrar um novo contato.')
+    req.session.save(() => res.redirect('/'))
+    return
+  }
+
+  next();
+}
