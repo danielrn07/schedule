@@ -1,4 +1,4 @@
-const Register = require('../models/RegisterModel')
+const { Register } = require('../models/RegisterModel')
 
 exports.index = (req, res) => {
   res.render('register')
