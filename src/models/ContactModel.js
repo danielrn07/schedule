@@ -69,6 +69,12 @@ class Contact {
     const contacts = await ContactModel.find().sort({ registrationDate: -1 })
     return contacts
   }
+
+  static async delete(id) {
+    if (typeof id !== 'string') return
+    const contact = await ContactModel.findOneAndDelete({ _id: id })
+    return contact
+  }
 }
 
 module.exports = Contact
