@@ -36,12 +36,6 @@ class Contact {
         'É necessário adicionar um número ou e-mail para cadastrar um novo contato.',
       )
   }
-
-  static async getById(id) {
-    if (typeof id !== 'string') return
-    return await ContactModel.findById(id)
-  }
-
   async edit(id) {
     if (typeof id !== 'string') return
     this.validateData()
@@ -64,6 +58,16 @@ class Contact {
       email: this.body.email.trim(),
       registrationDate: this.body.registrationDate,
     }
+  }
+
+  static async getById(id) {
+    if (typeof id !== 'string') return
+    return await ContactModel.findById(id)
+  }
+
+  static async getContact() {
+    const contacts = await ContactModel.find().sort({ registrationDate: -1 })
+    return contacts
   }
 }
 

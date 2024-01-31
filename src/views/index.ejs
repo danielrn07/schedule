@@ -18,29 +18,15 @@
           <th class="px-6 py-3 text-left text-lg font-bold text-gray-700 uppercase tracking-wider">E-mail</th>
         </tr>
         <tbody class="bg-gray-100 divide-y divide-gray-200">
-          <tr>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">Daniel</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">(99) 99999-9999</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">test@gmail.com</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-blue-600 hover:text-blue-900">Editar</a></td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-red-600 hover:text-red-900">Excluir</a></td>
-          </tr>
-
-          <tr>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">Nascimento</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">(99) 99999-9999</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">test@gmail.com</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-blue-600 hover:text-blue-900">Editar</a></td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-red-600 hover:text-red-900">Excluir</a></td>
-          </tr>
-
-          <tr>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">Paulo</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">(99) 99999-9999</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap">test@gmail.com</td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-blue-600 hover:text-blue-900">Editar</a></td>
-            <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-red-600 hover:text-red-900">Excluir</a></td>
-          </tr>
+          <% contacts.forEach(contact => { %>
+            <tr>
+              <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><%= contact.name %></td>
+              <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><%= contact.phoneNumber %></td>
+              <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><%= contact.email %></td>
+              <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="/contact/<%= contact._id %>" class="text-blue-600 hover:text-blue-900">Editar</a></td>
+              <td class="px-6 py-4 text-sm font-medium text-gray-900 whitespace-nowrap"><a href="#" class="text-red-600 hover:text-red-900">Excluir</a></td>
+            </tr>            
+          <% }) %>          
         </tbody>
       </thead>
     </table>
