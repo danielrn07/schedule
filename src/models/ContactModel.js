@@ -37,6 +37,20 @@ class Contact {
       )
   }
 
+  static async getById(id) {
+    if (typeof id !== 'string') return
+    return await ContactModel.findById(id)
+  }
+
+  async edit(id) {
+    if (typeof id !== 'string') return
+    this.validateData()
+    if (this.errors.length > 0) return
+    this.contact = await ContactModel.findByIdAndUpdate(id, this.body, {
+      new: true,
+    })
+  }
+
   cleanUp() {
     for (const key in this.body) {
       if (typeof this.body[key] !== 'string') {
@@ -45,9 +59,9 @@ class Contact {
     }
 
     this.body = {
-      name: this.body.name,
-      phoneNumber: this.body.phoneNumber,
-      email: this.body.email,
+      name: this.body.name.trim(),
+      phoneNumber: this.body.phoneNumber.trim(),
+      email: this.body.email.trim(),
       registrationDate: this.body.registrationDate,
     }
   }
